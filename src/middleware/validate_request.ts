@@ -4,8 +4,8 @@ import log from "../logger";
 
 
 const validate = (schema: AnySchema) => async (
-    res:Response,
     req:Request,
+    res:Response,
     next:NextFunction
 ) => {
     try {
@@ -19,7 +19,6 @@ const validate = (schema: AnySchema) => async (
         log.error(error);
         return res.status(400).send(error.errors);
     }
-
 }
 
 export default validate;
